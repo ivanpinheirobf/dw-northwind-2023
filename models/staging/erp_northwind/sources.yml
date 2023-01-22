@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: erp
+    description: Banco réplica do erp da Northwind.
+    schema: erp_northwind
+    tables:
+      - name: orders
+        description: Uma linha por pedido. Inclui pedidos cancelados e deletados.
+        columns:
+          - name: order_id
+            description: Chave primária da tabela de ordens.
+            tests:
+              - unique
+              - not_null
+              
+      - name: products
+      - name: categories
+      - name: suppliers
+      - name: shippers
