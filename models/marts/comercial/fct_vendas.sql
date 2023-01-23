@@ -60,7 +60,8 @@ with
 
     , transformacoes as (
         select
-            *
+            {{ dbt_utils.generate_surrogate_key(['id_pedido', 'fk_produto']) }} as sk_venda
+            , *
             , case
                 when desconto > 0 then true
                 when desconto = 0 then false
