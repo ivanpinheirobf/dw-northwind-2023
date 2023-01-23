@@ -36,8 +36,10 @@ models:
     staging:
       erp_northwind:
         +materialized: view
+        +schema: stg
     marts:
       +materialized: table
+      +schema: marts
 
 
 
